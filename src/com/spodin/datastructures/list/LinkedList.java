@@ -44,7 +44,7 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public boolean add(E element) {
-        Node<E> newNode = new Node<E>();
+        Node<E> newNode = new Node<>();
         newNode.item = element;
 
         if (isEmpty()) {
@@ -61,7 +61,7 @@ public class LinkedList<E> implements List<E> {
     }
 
     public boolean addFirst(E element) {
-        Node<E> newNode = new Node<E>();
+        Node<E> newNode = new Node<>();
         newNode.item = element;
 
         if (isEmpty()) {
@@ -181,6 +181,8 @@ public class LinkedList<E> implements List<E> {
             }
             target.prev.next = target.next;
             target.next.prev = target.prev;
+            target.next = target.prev = null;
+            target.item = null;
         }
         size--;
     }
