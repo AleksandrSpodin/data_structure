@@ -169,9 +169,11 @@ public class LinkedList<E> implements List<E> {
             first = null;
             last = null;
         } else if (index == 0) {
+            first.item = null;
             first = first.next;
             first.prev = null;
         } else if (index == size - 1) {
+            last.item = null;
             last = last.prev;
             last.next = null;
         } else {
